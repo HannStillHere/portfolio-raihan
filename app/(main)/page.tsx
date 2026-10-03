@@ -74,13 +74,13 @@ export default function Home() {
               </MaskedText>
             </div>
 
-            {/* Right Column: Interactive 3D Geometric Core */}
+            {/* Right Column: Interactive 3D Dotted Matrix Globe */}
             <div className="flex flex-col items-center justify-center">
               <div className="relative">
                 <HeroScene />
                 <div className="absolute -bottom-2 inset-x-0 text-center">
                   <span className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest">
-                    3D Spatial Core • Gerakkan Mouse
+                    3D Spatial Globe • Putar & Arahkan Kursor
                   </span>
                 </div>
               </div>
