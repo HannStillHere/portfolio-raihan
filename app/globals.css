@@ -2,70 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --card-border: rgba(0, 0, 0, 0.08);
-}
-
-.dark {
-  --background: #0a0a0b;
-  --foreground: #f1f5f9;
-  --card-bg: rgba(15, 16, 19, 0.75);
-  --card-border: rgba(255, 255, 255, 0.08);
+@layer base {
+  :root {
+    --font-sans: var(--geist-sans);
+    --font-mono: var(--geist-mono);
+  }
+  
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  color: var(--foreground);
-  background-color: var(--background);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  overflow-x: hidden;
-  min-height: 100vh;
+/* Noise grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: overlay;
 }
 
-/* Custom subtle scrollbar */
+/* Scrollbar minimal */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #0a0a0b;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e2028;
-  border-radius: 4px;
+  background: #1a1a1b;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a2d39;
+  background: #2a2a2b;
 }
 
-/* Glassmorphism utility */
-.glass-nav {
-  background: rgba(10, 10, 11, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--card-border);
-}
-
-/* Double-bezel concentric border effect */
-.double-bezel {
+/* Double bezel card */
+.card-bezel {
   position: relative;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
-              0 8px 30px -4px rgba(0, 0, 0, 0.5);
+  background: #0f1013;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 
-.double-bezel:hover {
-  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.3),
-              0 14px 40px -4px rgba(34, 211, 238, 0.15);
+.card-bezel:hover {
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: inset 0 0 0 1px rgba(245, 158, 11, 0.1);
 }

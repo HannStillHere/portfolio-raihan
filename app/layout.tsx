@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/ThemeProvider";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 export const viewport: Viewport = {
   themeColor: "#0A0A0B",
@@ -9,51 +10,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Raihan — Personal Portfolio",
+  title: "Raihan — Web & Bot Automation",
   description:
-    "Portfolio Raihan, siswa SMK TJKT yang mendalami pembuatan website modern, aplikasi web, dan bot otomatisasi.",
-  keywords: [
-    "Raihan",
-    "Portfolio",
-    "SMK TJKT",
-    "Web Developer",
-    "Next.js",
-    "Bot Automation",
-    "SobatDonghua",
-    "Downloaderku",
-    "RaihanCloud",
-  ],
-  authors: [{ name: "Raihan", url: "https://raihanaja.my.id" }],
-  creator: "Raihan",
+    "Siswa SMK TJKT yang mendalami pembuatan website dan bot otomatisasi.",
   metadataBase: new URL("https://raihanaja.my.id"),
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    url: "https://raihanaja.my.id",
-    title: "Raihan — Personal Portfolio",
-    description:
-      "Portfolio Raihan — Siswa SMK TJKT yang mendalami website modern dan bot otomatisasi.",
-    siteName: "Raihan Portfolio",
-    images: [
-      {
-        url: "/images/projects/screenshot-1.png",
-        width: 1200,
-        height: 630,
-        alt: "Raihan Portfolio",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Raihan — Personal Portfolio",
-    description:
-      "Portfolio Raihan — Siswa SMK TJKT yang mendalami website modern dan bot otomatisasi.",
-    images: ["/images/projects/screenshot-1.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
 export default function RootLayout({
@@ -62,11 +22,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" suppressHydrationWarning className="dark">
-      <body className="bg-[#0A0A0B] text-slate-100 antialiased selection:bg-cyan-500/20 selection:text-cyan-300">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          {children}
-        </ThemeProvider>
+    <html lang="id" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="bg-[#0A0A0B] text-neutral-100 antialiased selection:bg-amber-500/20 selection:text-amber-300 font-sans">
+        {children}
       </body>
     </html>
   );
