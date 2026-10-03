@@ -123,7 +123,7 @@ export default function ProjectsPage() {
                   <ParallaxImage
                     src={project.image}
                     alt={project.title}
-                    className="aspect-video md:aspect-square"
+                    className="aspect-video md:aspect-square bg-[#050507]"
                   />
 
                   <div className="p-6 flex flex-col justify-between">
