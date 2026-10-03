@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(0, 0, 0, 0.08);
+}
+
+.dark {
+  --background: #0a0a0b;
+  --foreground: #f1f5f9;
+  --card-bg: rgba(15, 16, 19, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0b;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2028;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2d39;
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background: rgba(10, 10, 11, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+}
+
+/* Double-bezel concentric border effect */
+.double-bezel {
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06),
+              0 8px 30px -4px rgba(0, 0, 0, 0.5);
+}
+
+.double-bezel:hover {
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.3),
+              0 14px 40px -4px rgba(34, 211, 238, 0.15);
+}
