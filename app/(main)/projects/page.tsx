@@ -60,7 +60,7 @@ const PROJECTS = [
   },
   {
     id: "telegram-sentinel",
-    title: "Telegram Laptop Sentinel",
+    title: "Telegram Bot Assistant",
     desc: "Sistem keamanan laptop pribadi & kontrol jarak jauh penuh melalui Telegram.",
     link: null,
     linkLabel: null,
@@ -68,6 +68,7 @@ const PROJECTS = [
     tags: ["Python", "Telegram API", "OpenCV", "Win32 API", "PyCaw"],
     image: "/images/projects/telegram-bot.png",
     features: [
+      "AI Chat Multi-Model 24/7 — Auto-reply chat pribadi & grup mention dengan engine DeepSeek V4.1 Flash, Gemini 3.8, Claude Opus, dan cascade failover otomatis.",
       "Intruder Trap Webcam — Deteksi salah password Windows (Event 4625), kamera otomatis memotret wajah penyusup dan kirim ke Telegram.",
       "Power & Battery Watchdog — Pantau charger dicabut/pasang dan peringatan suara saat baterai <= 20%.",
       "Motion Detection (/guard on/off) — Sensor pendeteksi gerakan di depan laptop saat ditinggal.",
@@ -80,7 +81,7 @@ const PROJECTS = [
   },
   {
     id: "discord-bot",
-    title: "Discord Server Master",
+    title: "Discord Bot Server",
     desc: "Bot Discord komunitas all-in-one untuk musik, AI chat, moderasi, dan manajemen server.",
     link: null,
     linkLabel: null,
@@ -88,6 +89,7 @@ const PROJECTS = [
     tags: ["Python", "discord.py", "yt-dlp", "SQLite", "httpx"],
     image: "/images/projects/discord-bot.png",
     features: [
+      "AI Chat Multi-Model 24/7 — Auto-reply chat pribadi & grup mention dengan engine DeepSeek V4.1 Flash, Gemini 3.8, Claude Opus, dan cascade failover otomatis.",
       "Music Player Multi-Platform — Streaming audio YouTube, Spotify, SoundCloud, TikTok dengan tombol kontrol interaktif.",
       "AI Chat Multi-Model & Vision — Chat cerdas di channel Discord dengan analisis gambar, dokumen, dan OCR.",
       "Moderasi Otomatis — Anti-spam, anti-raid, link filter, kick, ban, timeout, warn, purge pesan, lockdown channel.",
@@ -177,11 +179,10 @@ export default function ProjectsPage() {
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-2 text-sm transition-colors ${
-                            project.id === "wa-ai-bot"
-                              ? "px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-medium"
-                              : "text-amber-500 hover:text-amber-400"
-                          }`}
+                          className={`inline-flex items-center gap-2 text-sm transition-colors ${project.id === "wa-ai-bot"
+                            ? "px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-medium"
+                            : "text-amber-500 hover:text-amber-400"
+                            }`}
                         >
                           {project.id === "wa-ai-bot" ? (
                             <MessageCircle className="w-4 h-4" />
