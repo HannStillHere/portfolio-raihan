@@ -54,7 +54,7 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Bot & Automation Projects (Bottom Row - 3 Col) */}
+        {/* Bot & Automation Projects (Bottom Row - 2x2 Grid) */}
         <div>
           <div className="flex items-center gap-2 mb-6">
             <Sparkles className="w-4 h-4 text-cyan-400" />
@@ -63,7 +63,7 @@ export function Projects() {
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherProjects.map((project, idx) => (
               <motion.div
                 key={project.id}

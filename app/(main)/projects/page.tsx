@@ -5,7 +5,7 @@ import { MaskedText } from "@/components/motion/MaskedText";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { Card3DTilt } from "@/components/motion/Card3DTilt";
 import Link from "next/link";
-import { ExternalLink, MessageCircle, Lock, ArrowRight, Sparkles } from "lucide-react";
+import { ExternalLink, MessageCircle, Send, Lock, ArrowRight, Sparkles } from "lucide-react";
 import { PROJECTS } from "@/lib/data";
 
 export default function ProjectsPage() {
@@ -161,11 +161,15 @@ export default function ProjectsPage() {
                             className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all ${
                               project.id === "wa-ai-bot"
                                 ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                                : project.id === "dramashort-bot"
+                                ? "bg-sky-600 hover:bg-sky-500 text-white"
                                 : "border border-white/10 hover:border-amber-500/40 hover:bg-white/[0.03] text-neutral-300 hover:text-white"
                             }`}
                           >
                             {project.id === "wa-ai-bot" ? (
                               <MessageCircle className="w-4 h-4" />
+                            ) : project.id === "dramashort-bot" ? (
+                              <Send className="w-4 h-4" />
                             ) : (
                               <ExternalLink className="w-4 h-4" />
                             )}

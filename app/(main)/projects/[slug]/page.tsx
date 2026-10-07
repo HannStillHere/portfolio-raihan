@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { MaskedText } from "@/components/motion/MaskedText";
 import { Card3DTilt } from "@/components/motion/Card3DTilt";
-import { ArrowLeft, ArrowRight, ExternalLink, MessageCircle, Lock, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, MessageCircle, Send, Lock, ShieldCheck, CheckCircle2 } from "lucide-react";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -114,11 +114,15 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] ${
                 project.id === "wa-ai-bot"
                   ? "bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/40"
+                  : project.id === "dramashort-bot"
+                  ? "bg-sky-600 hover:bg-sky-500 text-white shadow-lg shadow-sky-950/40"
                   : "bg-amber-500 hover:bg-amber-400 text-black shadow-lg shadow-amber-950/40"
               }`}
             >
               {project.id === "wa-ai-bot" ? (
                 <MessageCircle className="w-4 h-4" />
+              ) : project.id === "dramashort-bot" ? (
+                <Send className="w-4 h-4" />
               ) : (
                 <ExternalLink className="w-4 h-4" />
               )}

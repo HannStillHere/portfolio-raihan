@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/lib/data";
-import { ExternalLink, Layers, CheckCircle2 } from "lucide-react";
+import { ExternalLink, Layers, CheckCircle2, MessageCircle, Send } from "lucide-react";
 
 interface ProjectCardProps {
   project: Project;
@@ -70,8 +70,14 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 hover:border-cyan-400/50 text-cyan-300 text-sm font-semibold transition-all duration-200"
           >
-            <span>Buka Website</span>
-            <ExternalLink className="w-4 h-4" />
+            <span>{project.linkLabel || "Buka Website"}</span>
+            {project.id === "wa-ai-bot" ? (
+              <MessageCircle className="w-4 h-4" />
+            ) : project.id === "dramashort-bot" ? (
+              <Send className="w-4 h-4" />
+            ) : (
+              <ExternalLink className="w-4 h-4" />
+            )}
           </Link>
         ) : (
           <button
