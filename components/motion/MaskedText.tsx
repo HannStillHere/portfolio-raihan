@@ -11,17 +11,16 @@ interface MaskedTextProps {
 
 export function MaskedText({ children, className = "", delay = 0 }: MaskedTextProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "20px" });
 
   return (
     <div ref={ref} className={`overflow-hidden ${className}`}>
       <motion.div
-        initial={{ y: "100%" }}
-        animate={isInView ? { y: 0 } : { y: "100%" }}
+        initial={{ y: "100%", opacity: 0 }}
+        animate={isInView ? { y: 0, opacity: 1 } : { y: "100%", opacity: 0 }}
         transition={{
-          type: "spring",
-          stiffness: 280,
-          damping: 32,
+          duration: 0.4,
+          ease: [0.16, 1, 0.3, 1],
           delay,
         }}
       >

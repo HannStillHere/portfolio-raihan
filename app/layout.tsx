@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Raihan — Web & Bot Automation",
+  title: "Portofolio Raihan",
   description:
     "Siswa SMK TJKT yang mendalami pembuatan website dan bot otomatisasi.",
   metadataBase: new URL("https://raihanaja.my.id"),

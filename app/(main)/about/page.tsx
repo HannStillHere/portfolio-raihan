@@ -67,7 +67,7 @@ export default function AboutPage() {
                 {/* Portrait Container */}
                 <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-[#050507]">
                   <Image
-                    src="/images/profile/raihan-portrait.png"
+                    src="/images/profile/raihan-portrait.webp"
                     alt="Raihan Portrait"
                     fill
                     priority
